@@ -9,9 +9,9 @@ The goal is to survive as long as possible while achieving the highest score you
 ## Credits
 
 ### Game Developer
-[Mercedes Ramirez Diaz](https://mechii03.itch.io/)
-[Suarez Nahuel](https://linktr.ee/Namitof)
-[Santino Giuffrida Castillo](https://santinogiuffrida.itch.io/)
+[Mercedes Ramirez Diaz](https://mechii03.itch.io/)  
+[Suarez Nahuel](https://linktr.ee/Namitof)  
+[Santino Giuffrida Castillo](https://santinogiuffrida.itch.io/)  
 
 ### Font
 
