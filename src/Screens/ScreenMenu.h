@@ -6,18 +6,21 @@
 #include <SFML/Window.hpp>
 
 #include "UI/Button.h"
+#include "Screens/Screens.h"
+
+const float INITIAL_POS_X = 120.0f;
+const float INITIAL_POS_Y = 200.0f;
 
 class ScreenMenu : public Screen
 {
 private:
-	sf::Font font;
-	Button button;
+	Button play;
 
 public:
-	ScreenMenu(sf::Font font);
+	ScreenMenu(sf::RenderWindow& window, sf::Font& font);
 	~ScreenMenu();
 
-	void update() override;
+	Screens update() override;
 
-	void draw(sf::RenderWindow& window) override;
+	void draw() override;
 };

@@ -4,22 +4,33 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-ScreenMenu::ScreenMenu(sf::Font font) : Screen()
+#include "UI/Button.h"
+#include "Screens/Screens.h"
+
+ScreenMenu::ScreenMenu(sf::RenderWindow& window, sf::Font& font) : Screen(window), play({ INITIAL_POS_X, INITIAL_POS_Y }, "Play", font)
 {
-	this->font = font;
-	button = Button({ 0.0f,0.0f }, "testeo", this->font);
+
 }
 
 ScreenMenu::~ScreenMenu()
 {
 }
 
-void ScreenMenu::update()
+Screens ScreenMenu::update()
 {
+	sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
 
+	play.update(mousePosition);
+
+	if (play.isClicked(mousePosition))
+	{
+		return Screens::Play;
+	}
+
+	return Screens::Menu;
 }
 
-void ScreenMenu::draw(sf::RenderWindow& window)
+void ScreenMenu::draw()
 {
-	button.draw(window);
+	play.draw(window);
 }
