@@ -50,6 +50,7 @@ namespace DontCrashMyCar
 
 		if (car.getIsAlive())
 		{
+			obstacle.checkCollision(point);
 			currentLane.move(deltaTime);
 			nextLane.move(deltaTime);
 			obstacle.move(deltaTime);

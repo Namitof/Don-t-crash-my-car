@@ -74,4 +74,12 @@ namespace DontCrashMyCar
 		rect.setFillColor(sf::Color::Red);
 		window.draw(rect);
 	}
+
+	void Obstacle::checkCollision(Point& point)
+	{
+		if (pos.y < point.getPos().y + point.getHeight() && pos.y + height > point.getPos().y && pos.x < point.getPos().x + point.getWidth() && pos.x + width > point.getPos().x)
+		{
+			spawn();
+		}
+	}
 }

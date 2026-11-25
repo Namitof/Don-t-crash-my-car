@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
+#include "Point.h"
+
 namespace DontCrashMyCar
 {
 	const float OBSTACLE_SPEED = 300;
@@ -32,5 +34,6 @@ namespace DontCrashMyCar
 		void spawn();
 		void move(float dt);
 		void draw(sf::RenderWindow& window);
+		void checkCollision(Point& point);
 	};
 }

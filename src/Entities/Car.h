@@ -5,7 +5,7 @@
 #include <SFML/Window.hpp>
 
 #include "Obstacle.h"
-#include "Point.h"
+
 
 namespace DontCrashMyCar
 {
