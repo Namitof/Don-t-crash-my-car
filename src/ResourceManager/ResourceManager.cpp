@@ -5,6 +5,8 @@
 ResourceManager::ResourceManager()
 {
 	font = sf::Font("res/fonts/EvilScratch.ttf");
+	backgroundMenu = sf::Texture("res/backgrounds/backgorund_menu.png");
+	button = sf::Texture("res/assets/Button.png");
 }
 
 ResourceManager::~ResourceManager()

@@ -25,20 +25,18 @@ Screens ScreenMenu::update()
 	sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
 
 	play.update(mousePosition);
+	rules.update(mousePosition);
+	exit.update(mousePosition);
 
 	if (play.isClicked(mousePosition))
 	{
 		return Screens::Play;
 	}
-	else if (play.isClicked(mousePosition))
-	{
-		return Screens::Credits;
-	}
-	else if (play.isClicked(mousePosition))
+	else if (rules.isClicked(mousePosition))
 	{
 		return Screens::Rules;
 	}
-	else if (play.isClicked(mousePosition))
+	else if (exit.isClicked(mousePosition))
 	{
 		return Screens::Exit;
 	}

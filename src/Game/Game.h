@@ -6,6 +6,7 @@
 #include "Screens/Screens.h"
 #include "ResourceManager/ResourceManager.h"
 #include "Screens/ScreenMenu.h"
+#include "Screens/ScreenRules.h"
 #include "Screens/Gameplay.h"
 
 class Game
@@ -15,10 +16,12 @@ private:
 	sf::RenderWindow window;
 	ResourceManager resourceManager;
 
+	ResourceManager resourceManager;
+	sf::Sprite backgroundMenu;
+
 	Screens currentScreen;
 	ScreenMenu* menu;
-	ScreenMenu* rules;
-	ScreenMenu* exit;
+	ScreenRules* rules;
 	Gameplay* gameplay;
 
 public:

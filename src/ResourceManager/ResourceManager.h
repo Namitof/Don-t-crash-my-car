@@ -6,8 +6,8 @@ class ResourceManager
 {
 private:
 	sf::Font font;
-	sf::Texture backgroundMenu;
-	sf::Texture button;
+	sf::Sprite backgroundMenu;
+	sf::Sprite button;
 
 public:
 	ResourceManager();

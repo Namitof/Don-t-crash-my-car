@@ -6,6 +6,7 @@
 #include "Screens/Screens.h"
 #include "ResourceManager/ResourceManager.h"
 #include "Screens/ScreenMenu.h"
+#include "Screens/ScreenRules.h"
 #include "Screens/Gameplay.h"
 
 Game::Game()
@@ -37,12 +38,19 @@ Game::~Game()
         delete gameplay;
         gameplay = nullptr;
     }
+
+    if (rules != nullptr)
+    {
+        delete rules;
+        rules = nullptr;
+    }
 }
 
 void Game::initScreens()
 {
     menu = new ScreenMenu(window, resourceManager.getFont());
     gameplay = new Gameplay(window, resourceManager.getFont());
+    rules = new ScreenRules(window, resourceManager.getFont());
 }
 
 void Game::update()
@@ -56,6 +64,7 @@ void Game::update()
         currentScreen = gameplay->update();
         break;
     case Screens::Rules:
+        currentScreen = rules->update();
         break;
     case Screens::Exit:
         break;
@@ -70,12 +79,14 @@ void Game::draw()
     switch (currentScreen)
     {
     case Screens::Menu:
+        //ACA EL DIBUJO DEL BACKGROUND
         menu->draw();
         break;
     case Screens::Play:
         gameplay->draw();
         break;
     case Screens::Rules:
+        rules->draw();
         break;
     case Screens::Exit:
         break;
@@ -99,4 +110,10 @@ void Game::run()
 
         draw();
     }
+}
+
+Game::Game() : backgroundMenu(resourceManager.getBackgroundMenu())
+{
+    sf::Vector2u texSize = resourceManager.getBackgroundMenu().getSize();
+    backgroundMenu.setScale({ (float)WIDTH / texSize.x, (float)HEIGHT / texSize.y });
 }

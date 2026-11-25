@@ -8,10 +8,12 @@
 #include "Screens/ScreenMenu.h"
 #include "Screens/Gameplay.h"
 
+const float INITIAL_BACK_POS_Y = 600.0f;
+
 class ScreenRules : public Screen
 {
 private:
-	Button rules;
+	Button back;
 
 public:
 	ScreenRules(sf::RenderWindow& window, sf::Font& font);
