@@ -9,7 +9,7 @@ Lane::Lane(sf::Vector2f pos)
 	this->pos.y = pos.y;
 	width = 1280.0f;
 	height = 720.0f;
-	speed = 300;
+	speed = LANE_SPEED;
 
 	rect = sf::RectangleShape({ width, height });
 }

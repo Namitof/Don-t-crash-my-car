@@ -3,6 +3,13 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
+const float POINT_INITIAL_POS_Y = -200;
+const float POINT_HEIGTH = 150.0f;
+const float POINT_WIDTH = 150.0f;
+const float POINT_SPEED = 300;
+const float POINT_SPAWN_LANE_1 = 320.0f;
+const float POINT_LANE_OFFSET = 255.0f;
+
 class Point
 {
 private:

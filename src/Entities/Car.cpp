@@ -6,12 +6,12 @@
 
 Car::Car()
 {
-	pos.x = 320 + 255;
-	pos.y = 450;
+	pos.x = CAR_POS_X;
+	pos.y = CAR_POS_Y;
 	lane = 1;
 	points = 0;
-	width = 150.0f;
-	height = 90.0f;
+	width = CAR_WIDTH;
+	height = CAR_HEIGHT;
 	isAlive = true;
 	canMove = true;
 
@@ -27,13 +27,13 @@ void Car::move()
 {
 	if ( ( sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) ) && lane != 0 && canMove)
 	{
-		pos.x -= 255;
+		pos.x -= OBSTACLE_LANE_OFFSET;
 		lane--;
 		canMove = false;
 	}
 	else if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) && lane != 2 && canMove)
 	{
-		pos.x += 255;
+		pos.x += OBSTACLE_LANE_OFFSET;
 		lane++;
 		canMove = false;
 	}
@@ -47,7 +47,7 @@ void Car::move()
 
 void Car::addPoints()
 {
-	points += 30;
+	points += SCORE_ADD_VALUE;
 }
 
 void Car::checkCollision(Point& point, Obstacle& obstacle)

@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
+const float LANE_SPEED = 300.0f;
+
 class Lane
 {
 private:

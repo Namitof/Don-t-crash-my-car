@@ -5,10 +5,10 @@
 
 Obstacle::Obstacle()
 {
-	pos.y = -200;
-	height = 150.0f;
-	width = 150.0f;
-	speed = 300;
+	pos.y = OBSTACLE_INITIAL_POS_Y;
+	height = OBSTACLE_HEIGHT;
+	width = OBSTACLE_WDITH;
+	speed = OBSTACLE_SPEED;
 	spawn();
 
 	rect = sf::RectangleShape({ width, height });
@@ -37,18 +37,18 @@ float Obstacle::getWidth()
 void Obstacle::spawn()
 {
 	lane = rand() % 3;
-	pos.y = -200;
+	pos.y = OBSTACLE_INITIAL_POS_Y;
 	if (lane == 0)
 	{
-		pos.x = 320;
+		pos.x = OBSTACLE_SPAWN_LANE_1;
 	}
 	else if (lane == 1)
 	{
-		pos.x = 320 + 255;
+		pos.x = OBSTACLE_SPAWN_LANE_1 + OBSTACLE_LANE_OFFSET;
 	}
 	else if (lane == 2)
 	{
-		pos.x = 320 + 510;
+		pos.x = OBSTACLE_SPAWN_LANE_1 + (OBSTACLE_LANE_OFFSET * 2);
 	}
 }
 
