@@ -16,12 +16,13 @@ const float INITIAL_EXIT_POS_Y = 400.0f;
 class ScreenMenu : public Screen
 {
 private:
+	sf::Sprite background;
 	Button play;
 	Button rules;
 	Button exit;
 
 public:
-	ScreenMenu(sf::RenderWindow& window, sf::Font& font);
+	ScreenMenu(sf::RenderWindow& window, sf::Font& font, sf::Texture& backgroundMenu);
 	~ScreenMenu();
 
 	Screens update() override;

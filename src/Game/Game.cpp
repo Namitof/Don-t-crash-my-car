@@ -48,7 +48,7 @@ Game::~Game()
 
 void Game::initScreens()
 {
-    menu = new ScreenMenu(window, resourceManager.getFont());
+    menu = new ScreenMenu(window, resourceManager.getFont(), resourceManager.getBackgroundMenu());
     gameplay = new Gameplay(window, resourceManager.getFont());
     rules = new ScreenRules(window, resourceManager.getFont());
 }
@@ -82,7 +82,6 @@ void Game::draw()
     switch (currentScreen)
     {
     case Screens::Menu:
-        //ACA EL DIBUJO DEL BACKGROUND
         menu->draw();
         break;
     case Screens::Play:
