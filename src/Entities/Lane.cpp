@@ -29,6 +29,15 @@ namespace DontCrashMyCar
 
 	void Lane::move(float dt)
 	{
+		if (speed <= LANE_MAX_SPEED)
+		{
+			speed += ACCELERATION_LANE * dt;
+		}
+		else
+		{
+			speed = LANE_MAX_SPEED;
+		}
+
 		if (pos.y < 720)
 		{
 			pos.y += speed * dt;

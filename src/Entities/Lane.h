@@ -6,6 +6,8 @@
 namespace DontCrashMyCar
 {
 	const float LANE_SPEED = 300.0f;
+	const float ACCELERATION_LANE = 10.0f;
+	const float LANE_MAX_SPEED = 800.0f;
 
 	class Lane
 	{

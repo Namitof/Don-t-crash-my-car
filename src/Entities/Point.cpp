@@ -55,6 +55,15 @@ namespace DontCrashMyCar
 
 	void Point::move(float dt)
 	{
+		if (speed <= POINT_MAX_SPEED)
+		{
+			speed += ACCELERATION_POINT * dt;
+		}
+		else
+		{
+			speed = POINT_MAX_SPEED;
+		}
+
 		if (pos.y < 720)
 		{
 			pos.y += speed * dt;

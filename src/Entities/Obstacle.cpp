@@ -56,6 +56,15 @@ namespace DontCrashMyCar
 
 	void Obstacle::move(float dt)
 	{
+		if (speed <= OBSTACLE_MAX_SPEED)
+		{
+			speed += ACCELERATION_OBSTACLE * dt;
+		}
+		else
+		{
+			speed = OBSTACLE_MAX_SPEED;
+		}
+
 		if (pos.y < 720)
 		{
 			pos.y += speed * dt;
