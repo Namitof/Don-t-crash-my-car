@@ -17,6 +17,8 @@ namespace DontCrashMyCar
 	const float POS_X = 15.0f;
 	const float POS_Y = 650.0f;
 	const unsigned int SCORE_SIZE = 60;
+	const unsigned int GAMEOVER_SIZE = 120;
+	const sf::Vector2f GAMEOVER_SPAWN = { 340.0f , 50.0f };
 
 	class Gameplay : public Screen
 	{
@@ -27,6 +29,7 @@ namespace DontCrashMyCar
 		sf::Sprite pointSprite;
 		sf::Sprite obstacleSprite;
 		sf::Text score;
+		sf::Text gameOver;
 		Car car;
 		Lane currentLane;
 		Lane nextLane;

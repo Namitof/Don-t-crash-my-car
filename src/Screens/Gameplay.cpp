@@ -25,9 +25,12 @@ namespace DontCrashMyCar
 		carSprite(carTexture),
 		pointSprite(pointTexture),
 		obstacleSprite(obstacleTexture),
-		score(font, "Score: 0", SCORE_SIZE)
+		score(font, "Score: 0", SCORE_SIZE),
+		gameOver(font, "GAME OVER", GAMEOVER_SIZE)
 	{
 		score.setFillColor(sf::Color::Black);
+		gameOver.setFillColor(sf::Color::Red);
+		gameOver.setPosition(GAMEOVER_SPAWN);
 	}
 
 	Gameplay::~Gameplay()
@@ -96,5 +99,10 @@ namespace DontCrashMyCar
 		back.draw(window);
 
 		window.draw(score);
+
+		if (!car.getIsAlive())
+		{
+			window.draw(gameOver);
+		}
 	}
 }
