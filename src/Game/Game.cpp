@@ -48,9 +48,9 @@ Game::~Game()
 
 void Game::initScreens()
 {
-    menu = new ScreenMenu(window, resourceManager.getFont(), resourceManager.getBackgroundMenu());
-    gameplay = new Gameplay(window, resourceManager.getFont());
-    rules = new ScreenRules(window, resourceManager.getFont());
+    menu = new ScreenMenu(window, resourceManager.getFont(), resourceManager.getBackgroundMenu(), resourceManager.getButton());
+    gameplay = new Gameplay(window, resourceManager.getFont(), resourceManager.getButton());
+    rules = new ScreenRules(window, resourceManager.getFont(), resourceManager.getButton(), resourceManager.getBackgroundMenu());
 }
 
 void Game::update()
@@ -100,8 +100,11 @@ void Game::draw()
 
 void Game::run()
 {
+    float deltaTime = 0.0f;
     while (window.isOpen() && gameIsRunning)
     {
+        deltaTime = clockDeltaTime.restart().asSeconds();
+
         while (const std::optional event = window.pollEvent())
         {
             if (event->is<sf::Event::Closed>())

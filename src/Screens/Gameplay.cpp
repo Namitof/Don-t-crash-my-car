@@ -8,7 +8,9 @@
 #include "UI/Button.h"
 #include "Screens/Screens.h"
 
-Gameplay::Gameplay(sf::RenderWindow& window, sf::Font& font) : Screen(window), back({ POS_X, POS_Y }, "BACK", font)
+Gameplay::Gameplay(sf::RenderWindow& window, sf::Font& font, sf::Texture& buttonTexture) :
+	Screen(window), 
+	back({ POS_X, POS_Y }, "BACK", font, buttonTexture)
 {
 
 }
