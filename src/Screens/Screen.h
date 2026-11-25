@@ -2,16 +2,18 @@
 
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include "Screens/Screens.h"
 
 class Screen
 {
-private:
+protected:
+	sf::RenderWindow& window;
 
 public:
-	Screen();
+	Screen(sf::RenderWindow& window);
 	~Screen();
 
-	virtual void update() = 0;
+	virtual Screens update() = 0;
 
-	virtual void draw(sf::RenderWindow& window) = 0;
+	virtual void draw() = 0;
 };

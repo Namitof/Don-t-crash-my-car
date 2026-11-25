@@ -1,7 +1,8 @@
 #include "Screen.h"
 
-Screen::Screen()
+Screen::Screen(sf::RenderWindow& window): window(window)
 {
+
 }
 
 Screen::~Screen()
