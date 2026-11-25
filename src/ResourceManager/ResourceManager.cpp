@@ -1,6 +1,7 @@
 #include "ResourceManager.h"
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 namespace DontCrashMyCar
 {
@@ -13,6 +14,7 @@ namespace DontCrashMyCar
 		car = sf::Texture("res/assets/BabyTest.png");
 		bottle = sf::Texture("res/assets/Bottle.png");
 		obstacle = sf::Texture("res/assets/Block.png");
+		musicMenu = sf::Music("res/music/mainMenu.wav");
 	}
 
 	ResourceManager::~ResourceManager()
@@ -53,5 +55,10 @@ namespace DontCrashMyCar
 	sf::Texture& ResourceManager::getObstacle()
 	{
 		return obstacle;
+	}
+
+	sf::Music& ResourceManager::getMusicMenu()
+	{
+		return musicMenu;
 	}
 }

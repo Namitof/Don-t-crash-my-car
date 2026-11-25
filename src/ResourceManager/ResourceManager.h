@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 namespace DontCrashMyCar
 {
@@ -14,6 +15,7 @@ namespace DontCrashMyCar
 		sf::Texture car;
 		sf::Texture bottle;
 		sf::Texture obstacle;
+		sf::Music musicMenu;
 
 	public:
 		ResourceManager();
@@ -26,5 +28,6 @@ namespace DontCrashMyCar
 		sf::Texture& getCar();
 		sf::Texture& getBottle();
 		sf::Texture& getObstacle();
+		sf::Music& getMusicMenu();
 	};
 }

@@ -2,6 +2,7 @@
 
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #include "Screens/Screens.h"
 #include "ResourceManager/ResourceManager.h"
@@ -11,7 +12,7 @@
 
 namespace DontCrashMyCar
 {
-	Game::Game()
+	Game::Game() : resourceManager()
 	{
 		const unsigned int WIDTH = 1280;
 		const unsigned int HEIGHT = 720;
@@ -19,8 +20,6 @@ namespace DontCrashMyCar
 		screenSize = { WIDTH , HEIGHT };
 
 		window = sf::RenderWindow(sf::VideoMode(screenSize), "Don't crash my car");
-
-		resourceManager = ResourceManager();
 
 		currentScreen = Screens::Menu;
 
@@ -120,6 +119,9 @@ namespace DontCrashMyCar
 
 	void Game::run()
 	{
+		resourceManager.getMusicMenu().play();
+		resourceManager.getMusicMenu().setLooping(true);
+
 		float deltaTime = 0.0f;
 		while (window.isOpen() && gameIsRunning)
 		{
