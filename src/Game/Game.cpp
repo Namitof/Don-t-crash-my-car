@@ -100,8 +100,11 @@ void Game::draw()
 
 void Game::run()
 {
+    float deltaTime = 0.0f;
     while (window.isOpen() && gameIsRunning)
     {
+        deltaTime = clockDeltaTime.restart().asSeconds();
+
         while (const std::optional event = window.pollEvent())
         {
             if (event->is<sf::Event::Closed>())

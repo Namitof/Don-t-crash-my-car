@@ -16,6 +16,8 @@ private:
 	sf::RenderWindow window;
 	ResourceManager resourceManager;
 
+	sf::Clock clockDeltaTime;
+
 	Screens currentScreen;
 	ScreenMenu* menu;
 	ScreenRules* rules;
