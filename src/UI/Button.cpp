@@ -5,78 +5,53 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-Button::Button()
+Button::Button(sf::Vector2f position, std::string label, sf::Font& font) : hitbox(BUTTON_SIZE), text(font, label, TEXT_SIZE), currentColor(DEFAULT_COLOR)
 {
-    hitbox = nullptr;
-    text = nullptr;
-    font = nullptr;
-    currentColor = nullptr;
+	hitbox.setPosition(position);
+	text.setPosition(position);
 }
 
-Button::Button(sf::Vector2f position, std::string text, sf::Font font)
+bool Button::isHovered(sf::Vector2i mousePosition)
 {
-    hitbox = new sf::RectangleShape(BUTTON_SIZE);
-    this->font = new sf::Font(font);
-    this->text = new sf::Text(*(this->font), text);
-    this->currentColor = new sf::Color(DEFAULT_COLOR);
-    hitbox->setPosition(position);
+	sf::Vector2f rectanglePos = hitbox.getPosition();
+	sf::Vector2f rectangleSize = hitbox.getSize();
+	if ((mousePosition.x <= rectanglePos.x + rectangleSize.x && mousePosition.x >= rectanglePos.x) && (mousePosition.y <= rectanglePos.y + rectangleSize.y && mousePosition.y >= rectanglePos.y))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
-Button::~Button()
+bool Button::isClicked(sf::Vector2i mousePosition)
 {
-    if (hitbox != nullptr)
-    {
-        delete hitbox;
-        hitbox = nullptr;
-    }
-
-    if (text != nullptr)
-    {
-        delete text;
-        text = nullptr;
-    }
-
-    if (font != nullptr)
-    {
-        delete font;
-        font = nullptr;
-    }
-
-    if (currentColor != nullptr)
-    {
-        delete currentColor;
-        currentColor = nullptr;
-    }
+	if (isHovered(mousePosition) && (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
-bool Button::isHovered()
+void Button::update(sf::Vector2i mousePosition)
 {
-    return false;
-}
-
-bool Button::isClicked()
-{
-    return false;
-}
-
-void Button::update()
-{
-
+	if (isHovered(mousePosition))
+	{
+		currentColor = SELECT_COLOR;
+	}
+	else
+	{
+		currentColor = DEFAULT_COLOR;
+	}
 }
 
 void Button::draw(sf::RenderWindow& window)
 {
-    if (hitbox != nullptr)
-    {
-        hitbox->setFillColor(*(currentColor));
-        window.draw(*(hitbox));
-    }
-
-    if (text != nullptr)
-    {
-        //text->setCharacterSize(30);
-        //text->setFillColor(sf::Color::White);
-        //text->setPosition({ 120.f, 130.f });
-        //window.draw(*text);
-    }
+	hitbox.setFillColor(currentColor);
+	window.draw(hitbox);
+	window.draw(text);
 }
