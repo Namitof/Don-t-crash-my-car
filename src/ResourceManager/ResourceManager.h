@@ -11,6 +11,6 @@ public:
 	ResourceManager();
 	~ResourceManager();
 
-	sf::Font getFont();
+	sf::Font& getFont();
 
 };

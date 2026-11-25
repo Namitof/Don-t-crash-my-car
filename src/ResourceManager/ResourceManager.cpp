@@ -12,7 +12,7 @@ ResourceManager::~ResourceManager()
 	
 }
 
-sf::Font ResourceManager::getFont()
+sf::Font& ResourceManager::getFont()
 {
 	return font;
 }
