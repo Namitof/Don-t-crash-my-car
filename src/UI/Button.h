@@ -6,9 +6,10 @@
 #include <SFML/Window.hpp>
 
 const sf::Vector2f BUTTON_SIZE = { 180.0f, 60.0f };
-const unsigned int TEXT_SIZE = 20;
+const unsigned int TEXT_SIZE = 30;
 const sf::Color SELECT_COLOR = sf::Color::Green;
 const sf::Color DEFAULT_COLOR = sf::Color::Blue;
+const sf::Color SPRITE_SELECT_COLOR = sf::Color(128, 128, 128);
 
 class Button
 {
