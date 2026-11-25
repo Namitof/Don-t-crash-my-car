@@ -48,6 +48,9 @@
     <ClCompile Include="src\Screens\Gameplay.cpp">
       <Filter>Screens</Filter>
     </ClCompile>
+    <ClCompile Include="src\Screens\ScreenRules.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game\Game.h">
@@ -69,6 +72,9 @@
       <Filter>Screens</Filter>
     </ClInclude>
     <ClInclude Include="src\Screens\Gameplay.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\ScreenRules.h">
       <Filter>Screens</Filter>
     </ClInclude>
   </ItemGroup>

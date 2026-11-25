@@ -17,6 +17,8 @@ private:
 
 	Screens currentScreen;
 	ScreenMenu* menu;
+	ScreenMenu* rules;
+	ScreenMenu* exit;
 	Gameplay* gameplay;
 
 public:

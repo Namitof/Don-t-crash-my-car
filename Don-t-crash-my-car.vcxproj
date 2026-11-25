@@ -193,6 +193,7 @@ CopyRes.bat "$(ProjectDir)res" "$(OutDir)res"</Command>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ResourceManager\ResourceManager.cpp" />
     <ClCompile Include="src\Screens\Gameplay.cpp" />
+    <ClCompile Include="src\Screens\ScreenRules.cpp" />
     <ClCompile Include="src\Screens\Screen.cpp" />
     <ClCompile Include="src\Screens\ScreenMenu.cpp" />
     <ClCompile Include="src\UI\Button.cpp" />
@@ -201,6 +202,7 @@ CopyRes.bat "$(ProjectDir)res" "$(OutDir)res"</Command>
     <ClInclude Include="src\Game\Game.h" />
     <ClInclude Include="src\ResourceManager\ResourceManager.h" />
     <ClInclude Include="src\Screens\Gameplay.h" />
+    <ClInclude Include="src\Screens\ScreenRules.h" />
     <ClInclude Include="src\Screens\Screen.h" />
     <ClInclude Include="src\Screens\ScreenMenu.h" />
     <ClInclude Include="src\Screens\Screens.h" />

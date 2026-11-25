@@ -9,12 +9,16 @@
 #include "Screens/Screens.h"
 
 const float INITIAL_POS_X = 120.0f;
-const float INITIAL_POS_Y = 200.0f;
+const float INITIAL_PLAY_POS_Y = 200.0f;
+const float INITIAL_RULES_POS_Y = 300.0f;
+const float INITIAL_EXIT_POS_Y = 400.0f;
 
 class ScreenMenu : public Screen
 {
 private:
 	Button play;
+	Button rules;
+	Button exit;
 
 public:
 	ScreenMenu(sf::RenderWindow& window, sf::Font& font);

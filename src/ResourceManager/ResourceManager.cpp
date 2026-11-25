@@ -16,3 +16,13 @@ sf::Font& ResourceManager::getFont()
 {
 	return font;
 }
+
+sf::Texture& ResourceManager::getBackgroundMenu()
+{
+	return backgroundMenu;
+}
+
+sf::Texture& ResourceManager::getButton()
+{
+	return button;
+}
