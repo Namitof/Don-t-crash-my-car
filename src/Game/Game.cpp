@@ -55,6 +55,8 @@ void Game::initScreens()
 
 void Game::update()
 {
+    gameIsRunning = true;
+
     switch (currentScreen)
     {
     case Screens::Menu:
@@ -67,6 +69,7 @@ void Game::update()
         currentScreen = rules->update();
         break;
     case Screens::Exit:
+        gameIsRunning = false;
         break;
     default:
         break;
@@ -98,7 +101,7 @@ void Game::draw()
 
 void Game::run()
 {
-    while (window.isOpen())
+    while (window.isOpen() && gameIsRunning)
     {
         while (const std::optional event = window.pollEvent())
         {
@@ -112,8 +115,8 @@ void Game::run()
     }
 }
 
-Game::Game() : backgroundMenu(resourceManager.getBackgroundMenu())
-{
-    sf::Vector2u texSize = resourceManager.getBackgroundMenu().getSize();
-    backgroundMenu.setScale({ (float)WIDTH / texSize.x, (float)HEIGHT / texSize.y });
-}
+//Game::Game() : backgroundMenu(resourceManager.getBackgroundMenu())
+//{
+//    sf::Vector2u texSize = resourceManager.getBackgroundMenu().getSize();
+//    backgroundMenu.setScale({ (float)WIDTH / texSize.x, (float)HEIGHT / texSize.y });
+//}

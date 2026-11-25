@@ -16,13 +16,12 @@ private:
 	sf::RenderWindow window;
 	ResourceManager resourceManager;
 
-	ResourceManager resourceManager;
-	sf::Sprite backgroundMenu;
-
 	Screens currentScreen;
 	ScreenMenu* menu;
 	ScreenRules* rules;
 	Gameplay* gameplay;
+
+	bool gameIsRunning = true;
 
 public:
 	Game();
