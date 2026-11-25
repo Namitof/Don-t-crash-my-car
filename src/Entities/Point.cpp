@@ -1,13 +1,16 @@
 #include "Point.h"
-
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 
 Point::Point()
 {
 	pos.y = -200;
-	height = 150;
-	width = 150;
-	speed = 100;
+	height = 150.0f;
+	width = 150.0f;
+	speed = 300;
 	spawn();
+
+	rect = sf::RectangleShape({ width, height });
 }
 
 Point::~Point()
@@ -20,12 +23,12 @@ sf::Vector2f Point::getPos()
 	return pos;
 }
 
-int Point::getHeight()
+float Point::getHeight()
 {
 	return height;
 }
 
-int Point::getWidth()
+float Point::getWidth()
 {
 	return width;
 }
@@ -58,4 +61,12 @@ void Point::move(float dt)
 	{
 		spawn();
 	}
+
+	rect.setPosition(pos);
+}
+
+void Point::draw(sf::RenderWindow& window)
+{
+	rect.setFillColor(sf::Color::Green);
+	window.draw(rect);
 }

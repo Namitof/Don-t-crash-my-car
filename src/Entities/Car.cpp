@@ -1,5 +1,8 @@
 #include "Car.h"
+
 #include <SFML/Window/Keyboard.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 
 Car::Car()
 {
@@ -7,10 +10,12 @@ Car::Car()
 	pos.y = 450;
 	lane = 1;
 	points = 0;
-	width = 150;
-	height = 90;
+	width = 150.0f;
+	height = 90.0f;
 	isAlive = true;
 	canMove = true;
+
+	rect = sf::RectangleShape({ width, height });
 }
 
 Car::~Car()
@@ -36,6 +41,8 @@ void Car::move()
 	{
 		canMove = true;
 	}
+
+	rect.setPosition(pos);
 }
 
 void Car::addPoints()
@@ -54,4 +61,25 @@ void Car::checkCollision(Point& point, Obstacle& obstacle)
 	{
 		isAlive = false;
 	}
+}
+
+void Car::draw(sf::RenderWindow& window)
+{
+	rect.setFillColor(sf::Color::White);
+	window.draw(rect);
+}
+
+bool Car::getIsAlive()
+{
+	return isAlive;
+}
+
+sf::Vector2f Car::getPos()
+{
+	return pos;
+}
+
+int Car::getPoints()
+{
+	return points;
 }

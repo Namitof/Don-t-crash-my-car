@@ -49,24 +49,24 @@ Game::~Game()
 void Game::initScreens()
 {
     menu = new ScreenMenu(window, resourceManager.getFont(), resourceManager.getBackgroundMenu(), resourceManager.getButton());
-    gameplay = new Gameplay(window, resourceManager.getFont(), resourceManager.getButton());
+    gameplay = new Gameplay(window, resourceManager.getFont(), resourceManager.getButton(), resourceManager.getBackgroundGame(), resourceManager.getCar(), resourceManager.getBottle(), resourceManager.getObstacle());
     rules = new ScreenRules(window, resourceManager.getFont(), resourceManager.getButton(), resourceManager.getBackgroundMenu());
 }
 
-void Game::update()
+void Game::update(float deltaTime)
 {
     gameIsRunning = true;
 
     switch (currentScreen)
     {
     case Screens::Menu:
-        currentScreen = menu->update();
+        currentScreen = menu->update(deltaTime);
         break;
     case Screens::Play:
-        currentScreen = gameplay->update();
+        currentScreen = gameplay->update(deltaTime);
         break;
     case Screens::Rules:
-        currentScreen = rules->update();
+        currentScreen = rules->update(deltaTime);
         break;
     case Screens::Exit:
         gameIsRunning = false;
@@ -111,7 +111,7 @@ void Game::run()
                 window.close();
         }
 
-        update();
+        update(deltaTime);
 
         draw();
     }

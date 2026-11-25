@@ -13,7 +13,7 @@ public:
 	Screen(sf::RenderWindow& window);
 	~Screen();
 
-	virtual Screens update() = 0;
+	virtual Screens update(float deltaTime) = 0;
 
 	virtual void draw() = 0;
 };

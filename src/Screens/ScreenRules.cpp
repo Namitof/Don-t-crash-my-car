@@ -39,8 +39,9 @@ ScreenRules::ScreenRules(sf::RenderWindow& window, sf::Font& font, sf::Texture& 
 ScreenRules::~ScreenRules()
 {}
 
-Screens ScreenRules::update()
+Screens ScreenRules::update(float deltaTime)
 {
+	deltaTime++;
 	sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
 
 	back.update(mousePosition);

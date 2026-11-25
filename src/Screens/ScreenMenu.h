@@ -40,7 +40,7 @@ public:
 	ScreenMenu(sf::RenderWindow& window, sf::Font& font, sf::Texture& backgroundMenu, sf::Texture& buttonTexture);
 	~ScreenMenu();
 
-	Screens update() override;
+	Screens update(float deltaTime) override;
 
 	void draw() override;
 };

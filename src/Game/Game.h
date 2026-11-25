@@ -31,7 +31,7 @@ public:
 
 	void initScreens();
 
-	void update();
+	void update(float deltaTime);
 
 	void draw();
 

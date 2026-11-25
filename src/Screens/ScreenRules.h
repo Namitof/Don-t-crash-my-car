@@ -32,7 +32,7 @@ public:
 	ScreenRules(sf::RenderWindow& window, sf::Font& font, sf::Texture& buttonTexture, sf::Texture& backgroundMenu);
 	~ScreenRules();
 
-	Screens update() override;
+	Screens update(float deltaTime) override;
 
 	void draw() override;
 };

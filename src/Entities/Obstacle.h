@@ -1,25 +1,26 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+
 class Obstacle
 {
+private:
+	sf::Vector2f pos;
+	int lane;
+	float width;
+	float height;
+	float speed;
+	sf::RectangleShape rect;
+
 public:
 	Obstacle();
 	~Obstacle();
 
 	sf::Vector2f getPos();
-	int getHeight();
-	int getWidth();
+	float getHeight();
+	float getWidth();
 	void spawn();
 	void move(float dt);
-	void draw();
-
-
-private:
-	sf::Vector2f pos;
-
-	int lane;
-	int width;
-	int height;
-	float speed;
+	void draw(sf::RenderWindow& window);
 };
-

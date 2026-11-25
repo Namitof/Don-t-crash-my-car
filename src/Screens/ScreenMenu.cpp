@@ -41,8 +41,9 @@ ScreenMenu::~ScreenMenu()
 {
 }
 
-Screens ScreenMenu::update()
+Screens ScreenMenu::update(float deltaTime)
 {
+	deltaTime++;
 	sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
 
 	play.update(mousePosition);

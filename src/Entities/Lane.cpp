@@ -1,12 +1,17 @@
 #include "Lane.h"
 
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+
 Lane::Lane(sf::Vector2f pos)
 {
 	this->pos.x = pos.x;
 	this->pos.y = pos.y;
-	width = 1280;
-	height = 720;
-	speed = 100;
+	width = 1280.0f;
+	height = 720.0f;
+	speed = 300;
+
+	rect = sf::RectangleShape({ width, height });
 }
 
 Lane::~Lane()
@@ -17,7 +22,7 @@ Lane::~Lane()
 void Lane::spawn()
 {
 	pos.x = 0;
-	pos.y = 0;
+	pos.y = -720.0f;
 }
 
 void Lane::move(float dt)
@@ -30,9 +35,17 @@ void Lane::move(float dt)
 	{
 		spawn();
 	}
+
+	rect.setPosition(pos);
 }
 
-void Lane::draw()
+void Lane::draw(sf::RenderWindow& window)
 {
+	rect.setFillColor(sf::Color::Blue);
+	window.draw(rect);
+}
 
+sf::Vector2f Lane::getPos()
+{
+	return pos;
 }
