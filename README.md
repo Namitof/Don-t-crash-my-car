@@ -1,4 +1,4 @@
-![Logo Tar-Killer](res/logo/logo.png)
+![Logo](res/logo/logo.png)
 
 ## General Project Description
 
