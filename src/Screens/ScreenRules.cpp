@@ -8,7 +8,9 @@
 #include "UI/Button.h"
 #include "Screens/Screens.h"
 
-ScreenRules::ScreenRules(sf::RenderWindow& window, sf::Font& font) : Screen(window), back({ INITIAL_POS_X, INITIAL_BACK_POS_Y }, "Back", font)
+ScreenRules::ScreenRules(sf::RenderWindow& window, sf::Font& font, sf::Texture& buttonTexture) : 
+	Screen(window), 
+	back({ INITIAL_POS_X, INITIAL_BACK_POS_Y }, "Back", font, buttonTexture)
 {
 
 }

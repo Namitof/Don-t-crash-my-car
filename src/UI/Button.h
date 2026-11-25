@@ -16,9 +16,10 @@ private:
 	sf::RectangleShape hitbox;
 	sf::Text text;
 	sf::Color currentColor;
+	sf::Sprite sprite;
 
 public:
-	Button(sf::Vector2f position, std::string label, sf::Font& font);
+	Button(sf::Vector2f position, std::string label, sf::Font& font, sf::Texture& texture);
 
 	bool isHovered(sf::Vector2i mousePosition);
 	bool isClicked(sf::Vector2i mousePosition);

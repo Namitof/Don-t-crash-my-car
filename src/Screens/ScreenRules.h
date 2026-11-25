@@ -16,7 +16,7 @@ private:
 	Button back;
 
 public:
-	ScreenRules(sf::RenderWindow& window, sf::Font& font);
+	ScreenRules(sf::RenderWindow& window, sf::Font& font, sf::Texture& buttonTexture);
 	~ScreenRules();
 
 	Screens update() override;

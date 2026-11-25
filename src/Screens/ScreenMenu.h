@@ -22,7 +22,7 @@ private:
 	Button exit;
 
 public:
-	ScreenMenu(sf::RenderWindow& window, sf::Font& font, sf::Texture& backgroundMenu);
+	ScreenMenu(sf::RenderWindow& window, sf::Font& font, sf::Texture& backgroundMenu, sf::Texture& buttonTexture);
 	~ScreenMenu();
 
 	Screens update() override;

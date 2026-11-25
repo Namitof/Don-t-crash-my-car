@@ -5,10 +5,14 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-Button::Button(sf::Vector2f position, std::string label, sf::Font& font) : hitbox(BUTTON_SIZE), text(font, label, TEXT_SIZE), currentColor(DEFAULT_COLOR)
+Button::Button(sf::Vector2f position, std::string label, sf::Font& font, sf::Texture& texture) :
+	hitbox(BUTTON_SIZE), text(font, label, TEXT_SIZE), 
+	currentColor(DEFAULT_COLOR),
+	sprite(texture)
 {
 	hitbox.setPosition(position);
 	text.setPosition(position);
+	sprite.setPosition(hitbox.getPosition());
 }
 
 bool Button::isHovered(sf::Vector2i mousePosition)
@@ -54,4 +58,5 @@ void Button::draw(sf::RenderWindow& window)
 	hitbox.setFillColor(currentColor);
 	window.draw(hitbox);
 	window.draw(text);
+	window.draw(sprite);
 }

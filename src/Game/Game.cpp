@@ -48,9 +48,9 @@ Game::~Game()
 
 void Game::initScreens()
 {
-    menu = new ScreenMenu(window, resourceManager.getFont(), resourceManager.getBackgroundMenu());
-    gameplay = new Gameplay(window, resourceManager.getFont());
-    rules = new ScreenRules(window, resourceManager.getFont());
+    menu = new ScreenMenu(window, resourceManager.getFont(), resourceManager.getBackgroundMenu(), resourceManager.getButton());
+    gameplay = new Gameplay(window, resourceManager.getFont(), resourceManager.getButton());
+    rules = new ScreenRules(window, resourceManager.getFont(), resourceManager.getButton());
 }
 
 void Game::update()

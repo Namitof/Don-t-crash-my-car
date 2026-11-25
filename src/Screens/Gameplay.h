@@ -17,7 +17,7 @@ private:
 	Button back;
 
 public:
-	Gameplay(sf::RenderWindow& window, sf::Font& font);
+	Gameplay(sf::RenderWindow& window, sf::Font& font, sf::Texture& buttonTexture);
 	~Gameplay();
 
 	Screens update() override;

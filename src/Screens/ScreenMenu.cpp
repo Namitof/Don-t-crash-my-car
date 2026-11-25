@@ -8,10 +8,10 @@
 #include "UI/Button.h"
 #include "Screens/Screens.h"
 
-ScreenMenu::ScreenMenu(sf::RenderWindow& window, sf::Font& font, sf::Texture& backgroundMenu) : Screen(window),
-play({ INITIAL_POS_X, INITIAL_PLAY_POS_Y }, "Play", font),
-rules({ INITIAL_POS_X, INITIAL_RULES_POS_Y }, "Rules", font),
-exit({ INITIAL_POS_X, INITIAL_EXIT_POS_Y }, "Exit", font),
+ScreenMenu::ScreenMenu(sf::RenderWindow& window, sf::Font& font, sf::Texture& backgroundMenu, sf::Texture& buttonTexture) : Screen(window),
+play({ INITIAL_POS_X, INITIAL_PLAY_POS_Y }, "Play", font, buttonTexture),
+rules({ INITIAL_POS_X, INITIAL_RULES_POS_Y }, "Rules", font, buttonTexture),
+exit({ INITIAL_POS_X, INITIAL_EXIT_POS_Y }, "Exit", font, buttonTexture),
 background(backgroundMenu)
 {
 	background.setPosition({ 0.0f,0.0f });
