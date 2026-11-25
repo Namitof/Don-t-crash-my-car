@@ -5,6 +5,6 @@
 int main()
 {
     srand(static_cast<unsigned int>(time(NULL)));
-    Game game = Game();
+    DontCrashMyCar::Game game = DontCrashMyCar::Game();
     game.run();
 }

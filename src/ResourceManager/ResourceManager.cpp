@@ -2,53 +2,56 @@
 
 #include <SFML/Graphics.hpp>
 
-ResourceManager::ResourceManager()
+namespace DontCrashMyCar
 {
-	font = sf::Font("res/fonts/EvilScratch.ttf");
-	backgroundMenu = sf::Texture("res/backgrounds/background_menu.png");
-	button = sf::Texture("res/assets/Button.png");
-	backgroundGame = sf::Texture("res/backgrounds/backgorund_gameplay.png");
-	car = sf::Texture("res/assets/BabyTest.png");
-	bottle = sf::Texture("res/assets/Bottle.png");
-	obstacle = sf::Texture("res/assets/Block.png");
-}
+	ResourceManager::ResourceManager()
+	{
+		font = sf::Font("res/fonts/EvilScratch.ttf");
+		backgroundMenu = sf::Texture("res/backgrounds/background_menu.png");
+		button = sf::Texture("res/assets/Button.png");
+		backgroundGame = sf::Texture("res/backgrounds/backgorund_gameplay.png");
+		car = sf::Texture("res/assets/BabyTest.png");
+		bottle = sf::Texture("res/assets/Bottle.png");
+		obstacle = sf::Texture("res/assets/Block.png");
+	}
 
-ResourceManager::~ResourceManager()
-{
-	
-}
+	ResourceManager::~ResourceManager()
+	{
 
-sf::Font& ResourceManager::getFont()
-{
-	return font;
-}
+	}
 
-sf::Texture& ResourceManager::getBackgroundMenu()
-{
-	return backgroundMenu;
-}
+	sf::Font& ResourceManager::getFont()
+	{
+		return font;
+	}
 
-sf::Texture& ResourceManager::getButton()
-{
-	return button;
-}
+	sf::Texture& ResourceManager::getBackgroundMenu()
+	{
+		return backgroundMenu;
+	}
 
-sf::Texture& ResourceManager::getBackgroundGame()
-{
-	return backgroundGame;
-}
+	sf::Texture& ResourceManager::getButton()
+	{
+		return button;
+	}
 
-sf::Texture& ResourceManager::getCar()
-{
-	return car;
-}
+	sf::Texture& ResourceManager::getBackgroundGame()
+	{
+		return backgroundGame;
+	}
 
-sf::Texture& ResourceManager::getBottle()
-{
-	return bottle;
-}
+	sf::Texture& ResourceManager::getCar()
+	{
+		return car;
+	}
 
-sf::Texture& ResourceManager::getObstacle()
-{
-	return obstacle;
+	sf::Texture& ResourceManager::getBottle()
+	{
+		return bottle;
+	}
+
+	sf::Texture& ResourceManager::getObstacle()
+	{
+		return obstacle;
+	}
 }

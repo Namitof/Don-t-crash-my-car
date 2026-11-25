@@ -3,23 +3,25 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-const float LANE_SPEED = 300.0f;
-
-class Lane
+namespace DontCrashMyCar
 {
-private:
-	sf::Vector2f pos;
-	float width;
-	float height;
-	float speed;
-	sf::RectangleShape rect;
+	const float LANE_SPEED = 300.0f;
 
-public:
-	Lane(sf::Vector2f pos);
-	~Lane();
-	void spawn();
-	void move(float speed);
-	void draw(sf::RenderWindow& window);
-	sf::Vector2f getPos();
-};
+	class Lane
+	{
+	private:
+		sf::Vector2f pos;
+		float width;
+		float height;
+		float speed;
+		sf::RectangleShape rect;
 
+	public:
+		Lane(sf::Vector2f pos);
+		~Lane();
+		void spawn();
+		void move(float speed);
+		void draw(sf::RenderWindow& window);
+		sf::Vector2f getPos();
+	};
+}

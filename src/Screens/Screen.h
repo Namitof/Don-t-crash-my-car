@@ -4,16 +4,19 @@
 #include <SFML/Graphics.hpp>
 #include "Screens/Screens.h"
 
-class Screen
+namespace DontCrashMyCar
 {
-protected:
-	sf::RenderWindow& window;
+	class Screen
+	{
+	protected:
+		sf::RenderWindow& window;
 
-public:
-	Screen(sf::RenderWindow& window);
-	~Screen();
+	public:
+		Screen(sf::RenderWindow& window);
+		virtual ~Screen();
 
-	virtual Screens update(float deltaTime) = 0;
+		virtual Screens update(float deltaTime) = 0;
 
-	virtual void draw() = 0;
-};
+		virtual void draw() = 0;
+	};
+}

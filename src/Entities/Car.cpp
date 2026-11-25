@@ -4,82 +4,85 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-Car::Car()
+namespace DontCrashMyCar
 {
-	pos.x = CAR_POS_X;
-	pos.y = CAR_POS_Y;
-	lane = 1;
-	points = 0;
-	width = CAR_WIDTH;
-	height = CAR_HEIGHT;
-	isAlive = true;
-	canMove = true;
-
-	rect = sf::RectangleShape({ width, height });
-}
-
-Car::~Car()
-{
-
-}
-
-void Car::move()
-{
-	if ( ( sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) ) && lane != 0 && canMove)
+	Car::Car()
 	{
-		pos.x -= OBSTACLE_LANE_OFFSET;
-		lane--;
-		canMove = false;
-	}
-	else if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) && lane != 2 && canMove)
-	{
-		pos.x += OBSTACLE_LANE_OFFSET;
-		lane++;
-		canMove = false;
-	}
-	else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
-	{
+		pos.x = CAR_POS_X;
+		pos.y = CAR_POS_Y;
+		lane = 1;
+		points = 0;
+		width = CAR_WIDTH;
+		height = CAR_HEIGHT;
+		isAlive = true;
 		canMove = true;
+
+		rect = sf::RectangleShape({ width, height });
 	}
 
-	rect.setPosition(pos);
-}
-
-void Car::addPoints()
-{
-	points += SCORE_ADD_VALUE;
-}
-
-void Car::checkCollision(Point& point, Obstacle& obstacle)
-{
-	if (pos.y < point.getPos().y + point.getHeight() && pos.y + height > point.getPos().y && pos.x < point.getPos().x + point.getWidth() && pos.x + width > point.getPos().x)
+	Car::~Car()
 	{
-		addPoints();
-		point.spawn();
+
 	}
-	else if (pos.y < obstacle.getPos().y + obstacle.getHeight() && pos.y + height > obstacle.getPos().y && pos.x < obstacle.getPos().x + obstacle.getWidth() && pos.x + width > obstacle.getPos().x)
+
+	void Car::move()
 	{
-		isAlive = false;
+		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) && lane != 0 && canMove)
+		{
+			pos.x -= OBSTACLE_LANE_OFFSET;
+			lane--;
+			canMove = false;
+		}
+		else if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) && lane != 2 && canMove)
+		{
+			pos.x += OBSTACLE_LANE_OFFSET;
+			lane++;
+			canMove = false;
+		}
+		else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+		{
+			canMove = true;
+		}
+
+		rect.setPosition(pos);
 	}
-}
 
-void Car::draw(sf::RenderWindow& window)
-{
-	rect.setFillColor(sf::Color::White);
-	window.draw(rect);
-}
+	void Car::addPoints()
+	{
+		points += SCORE_ADD_VALUE;
+	}
 
-bool Car::getIsAlive()
-{
-	return isAlive;
-}
+	void Car::checkCollision(Point& point, Obstacle& obstacle)
+	{
+		if (pos.y < point.getPos().y + point.getHeight() && pos.y + height > point.getPos().y && pos.x < point.getPos().x + point.getWidth() && pos.x + width > point.getPos().x)
+		{
+			addPoints();
+			point.spawn();
+		}
+		else if (pos.y < obstacle.getPos().y + obstacle.getHeight() && pos.y + height > obstacle.getPos().y && pos.x < obstacle.getPos().x + obstacle.getWidth() && pos.x + width > obstacle.getPos().x)
+		{
+			isAlive = false;
+		}
+	}
 
-sf::Vector2f Car::getPos()
-{
-	return pos;
-}
+	void Car::draw(sf::RenderWindow& window)
+	{
+		rect.setFillColor(sf::Color::White);
+		window.draw(rect);
+	}
 
-int Car::getPoints()
-{
-	return points;
+	bool Car::getIsAlive()
+	{
+		return isAlive;
+	}
+
+	sf::Vector2f Car::getPos()
+	{
+		return pos;
+	}
+
+	int Car::getPoints()
+	{
+		return points;
+	}
 }

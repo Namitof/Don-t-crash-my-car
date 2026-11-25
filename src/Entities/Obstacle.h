@@ -3,31 +3,34 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-const float OBSTACLE_SPEED = 300;
-const float OBSTACLE_WDITH = 150.0f;
-const float OBSTACLE_HEIGHT = 150.0f;
-const float OBSTACLE_INITIAL_POS_Y = -200.0f;
-const float OBSTACLE_SPAWN_LANE_1 = 320.0f; 
-const float OBSTACLE_LANE_OFFSET = 255.0f;
-
-class Obstacle
+namespace DontCrashMyCar
 {
-private:
-	sf::Vector2f pos;
-	int lane;
-	float width;
-	float height;
-	float speed;
-	sf::RectangleShape rect;
+	const float OBSTACLE_SPEED = 300;
+	const float OBSTACLE_WDITH = 150.0f;
+	const float OBSTACLE_HEIGHT = 150.0f;
+	const float OBSTACLE_INITIAL_POS_Y = -200.0f;
+	const float OBSTACLE_SPAWN_LANE_1 = 320.0f;
+	const float OBSTACLE_LANE_OFFSET = 255.0f;
 
-public:
-	Obstacle();
-	~Obstacle();
+	class Obstacle
+	{
+	private:
+		sf::Vector2f pos;
+		int lane;
+		float width;
+		float height;
+		float speed;
+		sf::RectangleShape rect;
 
-	sf::Vector2f getPos();
-	float getHeight();
-	float getWidth();
-	void spawn();
-	void move(float dt);
-	void draw(sf::RenderWindow& window);
-};
+	public:
+		Obstacle();
+		~Obstacle();
+
+		sf::Vector2f getPos();
+		float getHeight();
+		float getWidth();
+		void spawn();
+		void move(float dt);
+		void draw(sf::RenderWindow& window);
+	};
+}

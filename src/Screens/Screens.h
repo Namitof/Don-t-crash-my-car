@@ -1,11 +1,14 @@
 #pragma once
 
-enum class Screens
+namespace DontCrashMyCar
 {
-	None = 0,
-	Menu,
-	Play,
-	Credits,
-	Rules,
-	Exit
-};
+	enum class Screens
+	{
+		None = 0,
+		Menu,
+		Play,
+		Credits,
+		Rules,
+		Exit
+	};
+}

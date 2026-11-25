@@ -5,35 +5,40 @@
 
 #include "Screens/Screens.h"
 #include "ResourceManager/ResourceManager.h"
-#include "Screens/ScreenMenu.h"
-#include "Screens/ScreenRules.h"
-#include "Screens/Gameplay.h"
 
-class Game
+namespace DontCrashMyCar
 {
-private:
-	sf::Vector2u screenSize;
-	sf::RenderWindow window;
-	ResourceManager resourceManager;
+	//forward declaration
+	class ScreenMenu;
+	class ScreenRules;
+	class Gameplay;
 
-	sf::Clock clockDeltaTime;
+	class Game
+	{
+	private:
+		sf::Vector2u screenSize;
+		sf::RenderWindow window;
+		ResourceManager resourceManager;
 
-	Screens currentScreen;
-	ScreenMenu* menu;
-	ScreenRules* rules;
-	Gameplay* gameplay;
+		sf::Clock clockDeltaTime;
 
-	bool gameIsRunning = true;
+		Screens currentScreen;
+		ScreenMenu* menu;
+		ScreenRules* rules;
+		Gameplay* gameplay;
 
-public:
-	Game();
-	~Game();
+		bool gameIsRunning = true;
 
-	void initScreens();
+	public:
+		Game();
+		~Game();
 
-	void update(float deltaTime);
+		void initScreens();
 
-	void draw();
+		void update(float deltaTime);
 
-	void run();
-};
+		void draw();
+
+		void run();
+	};
+}

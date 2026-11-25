@@ -1,10 +1,13 @@
 #include "Screen.h"
 
-Screen::Screen(sf::RenderWindow& window): window(window)
+namespace DontCrashMyCar
 {
+	Screen::Screen(sf::RenderWindow& window) : window(window)
+	{
 
-}
+	}
 
-Screen::~Screen()
-{
+	Screen::~Screen()
+	{
+	}
 }
