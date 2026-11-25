@@ -189,6 +189,10 @@ CopyRes.bat "$(ProjectDir)res" "$(OutDir)res"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Entities\Car.cpp" />
+    <ClCompile Include="src\Entities\Lane.cpp" />
+    <ClCompile Include="src\Entities\Obstacle.cpp" />
+    <ClCompile Include="src\Entities\Point.cpp" />
     <ClCompile Include="src\Game\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ResourceManager\ResourceManager.cpp" />
@@ -199,6 +203,10 @@ CopyRes.bat "$(ProjectDir)res" "$(OutDir)res"</Command>
     <ClCompile Include="src\UI\Button.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Entities\Car.h" />
+    <ClInclude Include="src\Entities\Lane.h" />
+    <ClInclude Include="src\Entities\Obstacle.h" />
+    <ClInclude Include="src\Entities\Point.h" />
     <ClInclude Include="src\Game\Game.h" />
     <ClInclude Include="src\ResourceManager\ResourceManager.h" />
     <ClInclude Include="src\Screens\Gameplay.h" />

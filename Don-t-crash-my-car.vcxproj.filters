@@ -25,6 +25,9 @@
     <Filter Include="ResourceManager">
       <UniqueIdentifier>{2dd21ac7-7fba-41c4-8e24-f0a0d39005ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Entities">
+      <UniqueIdentifier>{8c4f4e93-e5de-4c0e-aad2-3769bbb664e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -51,6 +54,18 @@
     <ClCompile Include="src\Screens\ScreenRules.cpp">
       <Filter>Screens</Filter>
     </ClCompile>
+    <ClCompile Include="src\Entities\Lane.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Obstacle.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Point.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entities\Car.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game\Game.h">
@@ -76,6 +91,18 @@
     </ClInclude>
     <ClInclude Include="src\Screens\ScreenRules.h">
       <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Lane.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Obstacle.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Point.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entities\Car.h">
+      <Filter>Entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
