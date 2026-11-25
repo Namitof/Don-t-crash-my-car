@@ -45,6 +45,9 @@
     <ClCompile Include="src\ResourceManager\ResourceManager.cpp">
       <Filter>ResourceManager</Filter>
     </ClCompile>
+    <ClCompile Include="src\Screens\Gameplay.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game\Game.h">
@@ -61,6 +64,12 @@
     </ClInclude>
     <ClInclude Include="src\ResourceManager\ResourceManager.h">
       <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\Screens.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Screens\Gameplay.h">
+      <Filter>Screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,8 +3,10 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
+#include "Screens/Screens.h"
 #include "ResourceManager/ResourceManager.h"
 #include "Screens/ScreenMenu.h"
+#include "Screens/Gameplay.h"
 
 class Game
 {
@@ -13,7 +15,9 @@ private:
 	sf::RenderWindow window;
 	ResourceManager resourceManager;
 
+	Screens currentScreen;
 	ScreenMenu* menu;
+	Gameplay* gameplay;
 
 public:
 	Game();
