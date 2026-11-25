@@ -41,7 +41,7 @@ void Game::update()
 
 void Game::draw()
 {
-    menu->draw(window);
+    
 }
 
 void Game::run()
@@ -58,7 +58,7 @@ void Game::run()
 
         window.clear();
 
-        //draw();
+        menu->draw(window);
 
         window.draw(shape);
         window.display();

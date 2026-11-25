@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Don-t-crash-my-car.vcxproj" />
+  <Project Path="Don-t-crash-my-car.vcxproj" Id="fbac0819-5920-4c58-9ad5-f55080ff5da1" />
 </Solution>

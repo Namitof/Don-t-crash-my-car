@@ -121,6 +121,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)lib\SFML-3.1.0-windows-vc17-64-bit\SFML-3.1.0\include;$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,7 +132,7 @@ sfml-window-s-d.lib
 opengl32.lib
 ;freetype.lib
 ;winmm.lib;
-gdi32.lib;sfml-audio-s-d.lib;
+gdi32.lib;harfbuzzd.lib;sfml-audio-s-d.lib;
 flac.lib;
 vorbisenc.lib
 ;vorbisfile.lib
@@ -169,7 +170,7 @@ sfml-system-s.lib
 ;opengl32.lib;
 freetype.lib;
 winmm.lib;
-gdi32.lib;sfml-audio-s.lib;
+gdi32.lib;sfml-audio-s.lib;harfbuzz.lib;
 flac.lib;
 vorbisenc.lib;
 vorbisfile.lib;

@@ -68,11 +68,15 @@ void Button::draw(sf::RenderWindow& window)
 {
     if (hitbox != nullptr)
     {
-        window.draw(*hitbox);
+        hitbox->setFillColor(*(currentColor));
+        window.draw(*(hitbox));
     }
 
     if (text != nullptr)
     {
-        window.draw(*text);
+        //text->setCharacterSize(30);
+        //text->setFillColor(sf::Color::White);
+        //text->setPosition({ 120.f, 130.f });
+        //window.draw(*text);
     }
 }

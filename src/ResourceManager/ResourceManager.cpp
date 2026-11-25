@@ -4,7 +4,7 @@
 
 ResourceManager::ResourceManager()
 {
-	font = sf::Font("res/EvilScratch.ttf");
+	font = sf::Font("res/fonts/EvilScratch.ttf");
 }
 
 ResourceManager::~ResourceManager()
